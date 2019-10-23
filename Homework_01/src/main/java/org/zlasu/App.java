@@ -2,6 +2,7 @@ package org.zlasu;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zlasu.customer.Customer;
+import org.zlasu.customer.FileCustomerLogger;
 import org.zlasu.customer.MemoryCustomerRepository;
 import org.zlasu.customer.SimpleCustomerLogger;
 
@@ -20,6 +21,10 @@ public class App {
         MemoryCustomerRepository memoryCustomerRepository = context.getBean("memoryCustomerRepository",
                 MemoryCustomerRepository.class);
         memoryCustomerRepository.addCustomer(new Customer());
+        System.out.println();
 
+        //TASK 4
+        FileCustomerLogger fileCustomerLogger = context.getBean("fileCustomerLogger", FileCustomerLogger.class);
+        fileCustomerLogger.log();
     }
 }

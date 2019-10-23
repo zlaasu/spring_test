@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    TASK 2-->
+    <bean id="simpleCustomerLogger" class="org.zlasu.customer.SimpleCustomerLogger"/>
+
+    <!--    TASK 3-->
+    <bean id="memoryCustomerRepository" class="org.zlasu.customer.MemoryCustomerRepository">
+        <constructor-arg ref="simpleCustomerLogger"/>
+    </bean>
+
+    <!--    TASK 4-->
+    <bean id="fileCustomerLogger" class="org.zlasu.customer.FileCustomerLogger">
+        <property name="fileName" value="text.txt"/>
+    </bean>
+
+</beans>

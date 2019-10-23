@@ -8,12 +8,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
-public class AppInitializer implements WebApplicationInitializer {
+public class AppInitializerTest implements WebApplicationInitializer {
 
     public void onStartup(ServletContext container) throws ServletException {
         AnnotationConfigWebApplicationContext context =
                 new AnnotationConfigWebApplicationContext();
-        context.register(AppConfig.class);
+
+        context.register(AppConfigTest.class);
         context.setServletContext(container);
         ServletRegistration.Dynamic servlet =
                 container.addServlet("dispatcher", new DispatcherServlet(context));

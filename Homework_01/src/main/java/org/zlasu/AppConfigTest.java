@@ -8,6 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "org.zlasu")
-public class AppConfig extends WebMvcConfigurerAdapter {
+public class AppConfigTest extends WebMvcConfigurerAdapter {
 
 }
