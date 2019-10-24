@@ -1,9 +1,8 @@
 package org.zlasu.hello;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
@@ -29,5 +28,16 @@ public class HelloController {
     @ResponseBody
     public String random(@PathVariable String firstName, @PathVariable String  lastName) {
         return "Witaj " + firstName + " " + lastName;
+    }
+
+    @GetMapping("/form")
+    public String formGetAction() {
+        return "task3GET.jsp";
+    }
+
+    @PostMapping("/form")
+    public String formPostAction(Model model, @RequestParam String paramName) {
+        model.addAttribute("paramName", paramName);
+        return "task3POST.jsp";
     }
 }
