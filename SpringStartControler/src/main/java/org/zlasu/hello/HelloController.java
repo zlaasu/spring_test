@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Random;
 
 @Controller
+@RequestMapping("/first")
 public class HelloController {
 
     @GetMapping("/hello")
@@ -26,18 +27,18 @@ public class HelloController {
 
     @GetMapping("/hello/{firstName}/{lastName}")
     @ResponseBody
-    public String random(@PathVariable String firstName, @PathVariable String  lastName) {
+    public String random(@PathVariable String firstName, @PathVariable String lastName) {
         return "Witaj " + firstName + " " + lastName;
     }
 
     @GetMapping("/form")
     public String formGetAction() {
-        return "task3GET.jsp";
+        return "/task3GET.jsp";
     }
 
     @PostMapping("/form")
     public String formPostAction(Model model, @RequestParam String paramName) {
         model.addAttribute("paramName", paramName);
-        return "task3POST.jsp";
+        return "/task3POST.jsp";
     }
 }
