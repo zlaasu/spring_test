@@ -24,4 +24,10 @@ public class HelloController {
 
         return "random: " + i;
     }
+
+    @GetMapping("/hello/{firstName}/{lastName}")
+    @ResponseBody
+    public String random(@PathVariable String firstName, @PathVariable String  lastName) {
+        return "Witaj " + firstName + " " + lastName;
+    }
 }
