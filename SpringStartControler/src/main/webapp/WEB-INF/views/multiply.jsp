@@ -17,6 +17,7 @@
             border-spacing: 0;
             font: normal 13px Arial, sans-serif;
         }
+
         .zui-table thead th, .first {
             background-color: #DDEFEF;
             border: solid 1px #DDEEEE;
@@ -25,6 +26,7 @@
             text-align: left;
             text-shadow: 1px 1px 1px #fff;
         }
+
         .zui-table tbody td {
             border: solid 1px #DDEEEE;
             color: #333;
