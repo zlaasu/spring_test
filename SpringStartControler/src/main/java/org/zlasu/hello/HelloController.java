@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.Random;
 
 @Controller
@@ -41,8 +42,20 @@ public class HelloController {
         return "task3POST";
     }
 
-    @GetMapping("/")
-    public String home() {
+    @GetMapping("/helloView")
+    public String home(Model model) {
+        String backgroudColor = "black";
+        String color = "white";
+
+        int hour = LocalDateTime.now().getHour();
+
+        if (hour > 8 && hour < 20) {
+            backgroudColor = "white";
+            color = "black";
+        }
+
+        model.addAttribute("backgroudColor", backgroudColor);
+        model.addAttribute("color", color);
         return "home";
     }
 }
