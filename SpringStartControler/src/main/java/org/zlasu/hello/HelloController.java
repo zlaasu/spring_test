@@ -18,9 +18,9 @@ public class HelloController {
 
     @GetMapping("/random/{max}/{min}")
     @ResponseBody
-    public String random(@PathVariable int max) {
+    public String random(@PathVariable int max, @PathVariable int min) {
         Random random = new Random();
-        int i = random.nextInt(max) + 1;
+        int i = random.nextInt(max - min) + min + 1;
 
         return "random: " + i;
     }
