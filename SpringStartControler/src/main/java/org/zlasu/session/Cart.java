@@ -18,12 +18,33 @@ import java.util.List;
 public class Cart {
 
     private List<CartItem> cartItems = new ArrayList<>();
+    private final ProduktDao produktDao;
+
+    public Cart(ProduktDao produktDao) {
+        this.produktDao = produktDao;
+    }
 
     public void addToCart(CartItem cartItem) {
-        this.cartItems.add(cartItem);
+        CartItem item = findProduct(cartItem.getProduct().getId());
+
+        if (item == null) {
+            this.cartItems.add(cartItem);
+        } else {
+            item.setQuantity(item.getQuantity() + cartItem.getQuantity());
+        }
     }
 
     public void addProductToCart(int quantity, Product product) {
-        this.cartItems.add(new CartItem(quantity, product));
+        this.addToCart(new CartItem(quantity, product));
+    }
+
+    public CartItem findProduct(long id) {
+        for (int i = 0; i < cartItems.size(); i++) {
+            if (cartItems.get(i).getProduct().getId() == id) {
+                return cartItems.get(i);
+            }
+        }
+
+        return null;
     }
 }

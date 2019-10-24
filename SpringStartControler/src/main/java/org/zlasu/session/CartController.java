@@ -21,9 +21,8 @@ public class CartController {
 
     @RequestMapping("/addtocart2")
     @ResponseBody
-    public String addToCartProduct(@RequestParam int id, @RequestParam int quantity) {
-//        CartItem cartItem = cart.getCartItems();
-        Product product = produktDao.getList().stream().filter(s -> s.getId() == id).findFirst().get();
+    public String addToCartProduct(@RequestParam long id, @RequestParam int quantity) {
+        Product product = produktDao.findOne(id);
 
         cart.addToCart(new CartItem(quantity, product));
 
@@ -45,6 +44,10 @@ public class CartController {
     @RequestMapping("/cart")
     @ResponseBody
     public void cart() {
-        cart.getCartItems().forEach(System.out::println);
+        List<CartItem>  itemList = cart.getCartItems();
+
+        for (int i = 0; i < itemList.size(); i++) {
+            System.out.println(itemList.get(i).getProduct().getName() + " / " + itemList.get(i).getQuantity());
+        }
     }
 }
