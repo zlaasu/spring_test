@@ -2,7 +2,6 @@ package org.zlasu.article;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 import org.zlasu.author.Author;
 import org.zlasu.category.Category;
 

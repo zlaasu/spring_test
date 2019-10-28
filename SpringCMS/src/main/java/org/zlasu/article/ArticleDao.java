@@ -1,7 +1,6 @@
 package org.zlasu.article;
 
 import org.springframework.stereotype.Repository;
-import org.zlasu.article.Article;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
