@@ -34,3 +34,4 @@ hs_err_pid*
 /SpringCMS/SpringCMS.iml
 /SpringCMS/target/
 /SpringCMS/.idea/
+/SpringCMS/hibernate_test.iml
