@@ -2,8 +2,11 @@ package org.zlasu.author;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.zlasu.article.Article;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,4 +21,7 @@ public class Author {
     private String firstName;
 
     private String lastName;
+
+    @OneToMany(mappedBy = "author")
+    private List<Article> articles = new ArrayList<>();
 }
