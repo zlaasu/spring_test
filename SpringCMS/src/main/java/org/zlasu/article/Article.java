@@ -2,6 +2,7 @@ package org.zlasu.article;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 import org.zlasu.author.Author;
 import org.zlasu.category.Category;
 
@@ -23,6 +24,7 @@ public class Article {
     @Column(length = 200)
     private String title;
 
+    @Column(length = 65535, columnDefinition = "Text")
     private String content;
 
     @ManyToOne
@@ -48,5 +50,4 @@ public class Article {
     public void preUpdate() {
         updated = LocalDateTime.now();
     }
-
 }
