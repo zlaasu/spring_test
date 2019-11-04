@@ -14,6 +14,7 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
+                <th>Author</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -23,6 +24,7 @@
 
                     <td>${article.id}</td>
                     <td>${article.title}</td>
+                    <td>${article.author.firstName}</td>
                     <td>
                         <a href="/article/edit/${article.id}">EDIT</a> |
                         <a href="#" onclick="confirmDelete(${article.id}, '${article.title}')">DELETE</a>
