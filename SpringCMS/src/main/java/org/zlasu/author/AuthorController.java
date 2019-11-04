@@ -55,7 +55,7 @@ public class AuthorController {
     }
 
     @PostMapping("/edit/{id}")
-    public String categoryEditPostAction(@Valid Author author, @PathVariable Long id, BindingResult result) {
+    public String categoryEditPostAction(@Valid Author author, BindingResult result, @PathVariable Long id) {
         if (result.hasErrors()) {
             return "/author/edit";
         }

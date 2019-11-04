@@ -61,7 +61,7 @@ public class ArticleControler {
     }
 
     @PostMapping("/edit/{id}")
-    public String categoryEditPostAction(@Valid Article article, @PathVariable Long id, BindingResult result) {
+    public String categoryEditPostAction(@Valid Article article, BindingResult result, @PathVariable Long id) {
         if (result.hasErrors()) {
             return "/article/edit";
         }

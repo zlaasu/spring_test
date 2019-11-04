@@ -16,7 +16,7 @@
                 <label>
                     Ttile:
                     <form:input path="title" size="100"/>
-                        <%--        <form:errors path="firstName" element="div" cssClass="error"/>--%>
+                    <form:errors path="title" element="div" cssClass="error"/>
                 </label>
             </div>
 
@@ -24,7 +24,7 @@
                 <label>
                     Content:
                     <form:textarea path="content" rows="10" cols="100"/>
-                        <%--        <form:errors path="lastName" element="div" cssClass="error"/>--%>
+                    <form:errors path="content" element="div" cssClass="error"/>
                 </label>
             </div>
 
@@ -33,7 +33,7 @@
                     Author:
                     <form:select itemLabel="firstName" itemValue="id"
                                  path="author.id" items="${authors}"/>
-                    <form:errors path="author" element="div" cssClass="error"/>
+                    <form:errors path="author.id" element="div" cssClass="error"/>
                 </label>
             </div>
 

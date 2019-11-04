@@ -16,7 +16,7 @@
                 <label>
                     First name:
                     <form:input path="firstName"/>
-                        <%--        <form:errors path="firstName" element="div" cssClass="error"/>--%>
+                    <form:errors path="firstName" element="div" cssClass="error"/>
                 </label>
             </div>
 
@@ -24,7 +24,7 @@
                 <label>
                     Last name:
                     <form:textarea path="lastName"/>
-                        <%--        <form:errors path="lastName" element="div" cssClass="error"/>--%>
+                    <form:errors path="lastName" element="div" cssClass="error"/>
                 </label>
             </div>
 

@@ -2,9 +2,13 @@ package org.zlasu.article;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.zlasu.category.Category;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +24,12 @@ public class Article {
     private Long id;
 
     @Column(length = 200)
+    @NotBlank
+    @Size(max = 200)
     private String title;
 
+    @NotBlank
+    @Size(max = 500)
     @Column(length = 65535, columnDefinition = "Text")
     private String content;
 
@@ -29,6 +37,7 @@ public class Article {
     @JoinColumn(name = "author_id")
     private org.zlasu.author.Author author;
 
+    @NotEmpty
     @ManyToMany
     @JoinTable(name = "articles_categories",
             joinColumns = @JoinColumn(name = "article_id"),

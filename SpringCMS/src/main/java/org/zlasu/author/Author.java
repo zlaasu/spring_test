@@ -2,6 +2,7 @@ package org.zlasu.author;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotBlank;
 import org.zlasu.article.Article;
 
 import javax.persistence.*;
@@ -18,8 +19,10 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String firstName;
 
+    @NotBlank
     private String lastName;
 
     @OneToMany(mappedBy = "author")
