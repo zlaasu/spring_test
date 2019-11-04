@@ -13,7 +13,7 @@ package org.zlasu.validate;
 public @interface ListSize {
 
     int max();
-    String message() default "{pl.coderslab.validate.MaxListSize.message}";
+    String message() default "{pl.coderslab.validate.ListSize.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

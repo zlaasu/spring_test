@@ -8,33 +8,33 @@ import java.util.List;
 
 @Service
 @Transactional
-public class AuthorService {
+public class AuthorServiceDao {
 
-    private final AuthorRepository authorRepository;
+    private final AuthorDao authorDao;
 
     @Autowired
-    public AuthorService(AuthorRepository authorRepository) {
-        this.authorRepository = authorRepository;
+    public AuthorServiceDao(AuthorDao authorDao) {
+        this.authorDao = authorDao;
     }
 
     public void save(Author author) {
-        authorRepository.save(author);
+        authorDao.save(author);
     }
 
     public void update(Author author) {
-        authorRepository.save(author);
+        authorDao.update(author);
     }
 
     public Author findOne(Long id) {
-        return authorRepository.findById(id).orElse(null);
+        return authorDao.findOne(id);
     }
 
     public void delete(Long id) {
-        authorRepository.deleteById(id);
+        authorDao.delete(id);
     }
 
     public List<Author> findAll() {
-        return authorRepository.findAll();
+        return authorDao.findAll();
     }
 }
 

@@ -8,34 +8,33 @@ import java.util.List;
 
 @Service
 @Transactional
-public class CategoryService {
+public class CategoryServiceDao {
 
-    private final CategoryRepository categoryRepository;
+    private final CategoryDao categoryDao;
 
     @Autowired
-    public CategoryService(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
+    public CategoryServiceDao(CategoryDao categoryDao) {
+        this.categoryDao = categoryDao;
     }
 
     @Transactional
     public void save(Category category) {
-        categoryRepository.save(category);
-        System.out.println("save");
+        categoryDao.save(category);
     }
 
     public void update(Category category) {
-        categoryRepository.save(category);
+        categoryDao.update(category);
     }
 
     public Category findOne(Long id) {
-        return categoryRepository.findById(id).orElse(null);
+        return categoryDao.findOne(id);
     }
 
     public void delete(Long id) {
-        categoryRepository.deleteById(id);
+        categoryDao.delete(id);
     }
 
     public List<Category> findAll() {
-        return categoryRepository.findAll();
+        return categoryDao.findAll();
     }
 }

@@ -11,43 +11,43 @@ import java.util.List;
 
 @Service
 @Transactional
-public class ArticleService {
+public class ArticleServiceDao {
 
-    private final ArticleRepository articleRepository;
+    private final ArticleDao articleDao;
     private final CategoryDao categoryDao;
 
     @Autowired
-    public ArticleService( ArticleRepository articleRepository, CategoryDao categoryDao) {
-        this.articleRepository = articleRepository;
+    public ArticleServiceDao(ArticleDao articleDao, CategoryDao categoryDao) {
+        this.articleDao = articleDao;
         this.categoryDao = categoryDao;
     }
 
 
     public void save(Article article) {
-        articleRepository.save(article);
+        articleDao.save(article);
     }
 
     public void update(Article article) {
-        articleRepository.save(article);
+        articleDao.update(article);
     }
 
     public Article findOne(Long id) {
-        Article article =  articleRepository.findById(id).orElse(null);
+        Article article =  articleDao.findOne(id);
         Hibernate.initialize(article.getCategorys());
 
         return article;
     }
 
     public void delete(Long id) {
-        articleRepository.deleteById(id);
+        articleDao.delete(id);
     }
 
     public List<Article> findAll() {
-        return articleRepository.findAll();
+        return articleDao.findAll();
     }
 
     public Object findRecent() {
-        return articleRepository.findFirst5ByOrderByCreatedDesc();
+        return articleDao.findRecent();
     }
 
     public List<Article> findAllByCategoryId(Long categoryId) {
