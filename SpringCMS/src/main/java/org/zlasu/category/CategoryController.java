@@ -55,7 +55,7 @@ public class CategoryController {
     }
 
     @PostMapping("/edit/{id}")
-    public String categoryEditPostAction(@Valid Category category, @PathVariable Long id, BindingResult result) {
+    public String categoryEditPostAction(@Valid Category category, BindingResult result, @PathVariable Long id) {
         if (result.hasErrors()) {
             return "/category/edit";
         }
