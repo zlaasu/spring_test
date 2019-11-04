@@ -20,7 +20,6 @@ public class CategoryService {
     @Transactional
     public void save(Category category) {
         categoryRepository.save(category);
-        System.out.println("save");
     }
 
     public void update(Category category) {
