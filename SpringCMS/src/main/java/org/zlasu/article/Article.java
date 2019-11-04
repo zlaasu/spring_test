@@ -5,9 +5,9 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.zlasu.category.Category;
+import org.zlasu.validate.ListSize;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -38,6 +38,7 @@ public class Article {
     private org.zlasu.author.Author author;
 
     @NotEmpty
+    @ListSize(max = 2)
     @ManyToMany
     @JoinTable(name = "articles_categories",
             joinColumns = @JoinColumn(name = "article_id"),
