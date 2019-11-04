@@ -32,7 +32,10 @@ public class ArticleService {
     }
 
     public Article findOne(Long id) {
-        return articleDao.findOne(id);
+        Article article =  articleDao.findOne(id);
+        Hibernate.initialize(article.getCategorys());
+
+        return article;
     }
 
     public void delete(Long id) {

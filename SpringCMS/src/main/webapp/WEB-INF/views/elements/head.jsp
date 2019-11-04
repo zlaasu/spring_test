@@ -40,13 +40,14 @@
 
     <ul>
         <li><a href="/article/list">Articles</a></li>
+        <li><a href="/article/recent">Recent</a></li>
+        <li><a href="/article/add">Add Article</a></li>
 
         <li><a href="/category/list">Category</a></li>
         <li><a href="/category/add">Add category</a></li>
 
         <li><a href="/author/list">Author</a></li>
         <li><a href="/author/add">Add author</a></li>
-
     </ul>
 
 </div>
