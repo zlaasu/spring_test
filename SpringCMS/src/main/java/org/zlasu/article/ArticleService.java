@@ -22,6 +22,7 @@ public class ArticleService {
         this.categoryDao = categoryDao;
     }
 
+
     public void save(Article article) {
         articleDao.save(article);
     }

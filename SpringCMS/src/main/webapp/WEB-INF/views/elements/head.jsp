@@ -44,6 +44,9 @@
         <li><a href="/category/list">Category</a></li>
         <li><a href="/category/add">Add category</a></li>
 
+        <li><a href="/author/list">Author</a></li>
+        <li><a href="/author/add">Add author</a></li>
+
     </ul>
 
 </div>

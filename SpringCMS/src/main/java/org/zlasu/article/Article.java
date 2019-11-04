@@ -2,7 +2,6 @@ package org.zlasu.article;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.zlasu.author.Author;
 import org.zlasu.category.Category;
 
 import javax.persistence.*;
@@ -28,7 +27,7 @@ public class Article {
 
     @ManyToOne
     @JoinColumn(name = "author_id")
-    private Author author;
+    private org.zlasu.author.Author author;
 
     @ManyToMany
     @JoinTable(name = "articles_categories",
