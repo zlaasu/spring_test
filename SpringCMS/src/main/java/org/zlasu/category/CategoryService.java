@@ -17,6 +17,7 @@ public class CategoryService {
         this.categoryDao = categoryDao;
     }
 
+    @Transactional
     public void save(Category category) {
         categoryDao.save(category);
     }

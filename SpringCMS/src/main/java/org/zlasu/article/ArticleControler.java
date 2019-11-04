@@ -25,14 +25,14 @@ public class ArticleControler {
     public String listAction(Model model) {
         model.addAttribute("articles", articleService.findAll());
 
-        return "article/articleAll";
+        return "article/list";
     }
 
     @GetMapping("/list/{categoryId}")
     public String listAction(Model model, @PathVariable Long categoryId) {
         model.addAttribute("articles", articleService.findAllByCategoryId(categoryId));
 
-        return "article/articleAll";
+        return "article/list";
     }
 
     @GetMapping("/recent")
@@ -43,6 +43,6 @@ public class ArticleControler {
 
         model.addAttribute("categorys", categoryService.findAll());
 
-        return "article/articleRecent";
+        return "article/recent";
     }
 }
